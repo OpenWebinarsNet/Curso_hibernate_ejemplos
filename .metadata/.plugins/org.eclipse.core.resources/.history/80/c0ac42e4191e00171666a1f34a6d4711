@@ -1,0 +1,5 @@
+package com.openwebinars.hibernate.hbnpost.model;
+
+public class Comment {
+
+}

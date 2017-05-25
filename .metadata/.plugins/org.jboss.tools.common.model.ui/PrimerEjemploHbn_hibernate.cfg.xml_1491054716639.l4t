@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/PrimerEjemploHbn/src/main/resources/hibernate.cfg.xml">
+ <TreeFormPage>
+  <Memento type="HibConfig3SessionFactory">
+   <Memento collapsed="false" type="Session Factory"/>
+   <Memento collapsed="false" type="Properties"/>
+   <Memento collapsed="false" type="Mappings"/>
+  </Memento>
+  <Memento type="">
+   <Memento collapsed="false" type="Properties Editor"/>
+  </Memento>
+  <Memento type="%No text%">
+   <Memento collapsed="false" type="Mappings"/>
+   <Memento collapsed="false" type="Properties"/>
+  </Memento>
+  <Memento type="HibConfig3ObjectConnection">
+   <Memento collapsed="false" type="Connection"/>
+   <Memento collapsed="false" type="Advanced"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

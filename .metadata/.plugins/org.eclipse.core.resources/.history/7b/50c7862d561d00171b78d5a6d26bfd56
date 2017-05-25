@@ -1,0 +1,5 @@
+package com.openwebinars.hibernate.hibernatejpamanytomany;
+
+public class PersonAddressId {
+
+}

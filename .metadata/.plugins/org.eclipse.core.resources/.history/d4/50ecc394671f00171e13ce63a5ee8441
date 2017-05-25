@@ -1,0 +1,68 @@
+package com.openwebinars.hibernate.consultas;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.openwebinars.hibernate.consultas.model.Customer;
+import com.openwebinars.hibernate.consultas.model.Employee;
+
+/**
+ * Consultas (JPQL, con nombre, nativas, ....) www.openwebinars.net
+ * @LuisMLopezMag
+ */
+public class AppNative {
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Consultas");
+
+		EntityManager em = emf.createEntityManager();
+		
+		// CONSULTA 1
+
+		List<Object[]> employees = em.createNativeQuery("SELECT employeeNumber, firstName, lastName FROM employees")
+				.getResultList();
+
+		for (Object[] employee : employees) {
+			int employeeNumber = (int) employee[0];
+			String firstName = (String) employee[1];
+			String lastName = (String) employee[2];
+			System.out.println(String.format("Employee %d: %s %s", employeeNumber, firstName, lastName));
+		}
+
+		// CONSULTA 2
+		List<Customer> customers = em.createNativeQuery("SELECT  FROM customers", Customer.class).getResultList();
+
+		for (Customer c : customers) {
+			System.out.println(String.format("Customer %d: %s %s", c.getCustomerNumber(), c.getContactFirstName(),
+					c.getContactLastName()));
+		}
+
+		
+		// CONSULTA 3
+		List<Employee> employeesList = em.createNativeQuery(
+				"SELECT employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle FROM employees",
+				Employee.class).getResultList();
+
+		for (Employee employee : employeesList) {
+			System.out.println(String.format("Employee %d: %s %s ", employee.getEmployeeNumber(),
+					employee.getFirstName(), employee.getLastName()));
+		}
+		
+		
+		// CONSULTA 4
+		List<Employee> employeesList2 = em.createNamedQuery("Employee.nativeFindAll").getResultList();
+
+		for (Employee employee : employeesList2) {
+			System.out.println(String.format("Employee %d: %s %s ", employee.getEmployeeNumber(),
+					employee.getFirstName(), employee.getLastName()));
+		}
+		*/
+
+		em.close();
+		emf.close();
+
+	}
+}

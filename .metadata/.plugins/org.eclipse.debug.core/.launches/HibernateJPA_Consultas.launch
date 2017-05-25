@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.hibernate.eclipse.launch.ConsoleConfigurationLaunchConfigurationType">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/HibernateJPA_Consultas"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="HibernateJPA_Consultas"/>
+<stringAttribute key="org.hibernate.eclipse.launch.CONFIGURATION_FACTORY" value="JPA"/>
+<stringAttribute key="org.hibernate.eclipse.launch.HIBERNATE_VERSION" value="4.3"/>
+<stringAttribute key="org.hibernate.eclipse.launch.PERSISTENCE_UNIT_NAME" value="HibernateJPA_Consultas"/>
+<stringAttribute key="org.hibernate.eclipse.launch.USE_JPA_PROJECT_PROFILE" value="true"/>
+</launchConfiguration>

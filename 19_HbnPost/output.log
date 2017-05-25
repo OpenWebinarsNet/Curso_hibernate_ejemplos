@@ -1,0 +1,93 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m      [2m (v1.5.2.RELEASE)[0;39m
+
+[2m2017-04-02 18:30:03.248[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.o.h.hbnpost.HbnPostApplication        [0;39m [2m:[0;39m Starting HbnPostApplication on Luismi-PC with PID 4052 (C:\Users\Openwebinars\Desktop\Hibernate\EjemplosCompletos\HbnPost\target\classes started by Openwebinars in C:\Users\Openwebinars\Desktop\Hibernate\EjemplosCompletos\HbnPost)
+[2m2017-04-02 18:30:03.253[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.o.h.hbnpost.HbnPostApplication        [0;39m [2m:[0;39m No active profile set, falling back to default profiles: default
+[2m2017-04-02 18:30:03.391[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mationConfigEmbeddedWebApplicationContext[0;39m [2m:[0;39m Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@55ca8de8: startup date [Sun Apr 02 18:30:03 CEST 2017]; root of context hierarchy
+[2m2017-04-02 18:30:05.238[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.j.d.DriverManagerDataSource         [0;39m [2m:[0;39m Loaded JDBC driver: com.mysql.jdbc.Driver
+[2m2017-04-02 18:30:05.259[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'dataSource' of type [org.springframework.jdbc.datasource.DriverManagerDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2017-04-02 18:30:05.325[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Building JPA container EntityManagerFactory for persistence unit 'default'
+[2m2017-04-02 18:30:05.345[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2m2017-04-02 18:30:05.472[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate Core {5.0.12.Final}
+[2m2017-04-02 18:30:05.475[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.cfg.Environment           [0;39m [2m:[0;39m HHH000206: hibernate.properties not found
+[2m2017-04-02 18:30:05.478[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.cfg.Environment           [0;39m [2m:[0;39m HHH000021: Bytecode provider name : javassist
+[2m2017-04-02 18:30:05.541[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.hibernate.annotations.common.Version  [0;39m [2m:[0;39m HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+Sun Apr 02 18:30:05 CEST 2017 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[2m2017-04-02 18:30:06.137[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.dialect.Dialect           [0;39m [2m:[0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[2m2017-04-02 18:30:06.616[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.tool.hbm2ddl.SchemaUpdate [0;39m [2m:[0;39m HHH000228: Running hbm2ddl schema update
+Sun Apr 02 18:30:06 CEST 2017 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[2m2017-04-02 18:30:06.714[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2017-04-02 18:30:06.720[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2017-04-02 18:30:06.723[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'databaseConfig' of type [com.openwebinars.hibernate.hbnpost.config.DatabaseConfig$$EnhancerBySpringCGLIB$$4b88bf4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2017-04-02 18:30:06.930[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$75a5a923] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2017-04-02 18:30:07.600[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.b.c.e.t.TomcatEmbeddedServletContainer[0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2017-04-02 18:30:07.620[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service Tomcat
+[2m2017-04-02 18:30:07.622[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [2m:[0;39m Starting Servlet Engine: Apache Tomcat/8.5.11
+[2m2017-04-02 18:30:08.105[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[ost-startStop-1][0;39m [36morg.apache.jasper.servlet.TldScanner    [0;39m [2m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[2m2017-04-02 18:30:08.115[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[ost-startStop-1][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2017-04-02 18:30:08.116[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[ost-startStop-1][0;39m [36mo.s.web.context.ContextLoader           [0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 4729 ms
+[2m2017-04-02 18:30:08.363[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[ost-startStop-1][0;39m [36mo.s.b.w.servlet.ServletRegistrationBean [0;39m [2m:[0;39m Mapping servlet: 'dispatcherServlet' to [/]
+[2m2017-04-02 18:30:08.370[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[ost-startStop-1][0;39m [36mo.s.b.w.servlet.FilterRegistrationBean  [0;39m [2m:[0;39m Mapping filter: 'characterEncodingFilter' to: [/*]
+[2m2017-04-02 18:30:08.785[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped "{[/welcome],methods=[GET]}" onto public java.lang.String com.openwebinars.hibernate.hbnpost.controller.MainController.welcome()
+[2m2017-04-02 18:30:08.795[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2m2017-04-02 18:30:08.796[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2m2017-04-02 18:30:08.854[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2m2017-04-02 18:30:08.957[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@55ca8de8: startup date [Sun Apr 02 18:30:03 CEST 2017]; root of context hierarchy
+Sun Apr 02 18:30:09 CEST 2017 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[2m2017-04-02 18:30:09.868[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.j.e.a.AnnotationMBeanExporter       [0;39m [2m:[0;39m Registering beans for JMX exposure on startup
+[2m2017-04-02 18:30:10.002[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36ms.b.c.e.t.TomcatEmbeddedServletContainer[0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http)
+[2m2017-04-02 18:30:10.010[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.o.h.hbnpost.HbnPostApplication        [0;39m [2m:[0;39m Started HbnPostApplication in 7.47 seconds (JVM running for 8.814)
+[2m2017-04-02 18:30:18.626[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2m2017-04-02 18:30:18.627[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m FrameworkServlet 'dispatcherServlet': initialization started
+[2m2017-04-02 18:30:18.655[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+[2m2017-04-02 18:30:18.694[0;39m [33m WARN[0;39m [35m4052[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'dispatcherServlet'
+[2m2017-04-02 18:30:23.011[0;39m [31mERROR[0;39m [35m4052[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [36mo.a.c.c.C.[.[.[/].[dispatcherServlet]   [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Could not resolve view with name 'list' in servlet with name 'dispatcherServlet'] with root cause
+
+javax.servlet.ServletException: Could not resolve view with name 'list' in servlet with name 'dispatcherServlet'
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1262) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.7.RELEASE.jar:4.3.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:474) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:783) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:798) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1434) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.11.jar:8.5.11]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+
+[2m2017-04-02 18:39:05.148[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[169.254.252.198][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2017-04-02 18:39:05.149[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[169.254.252.198][0;39m [36mationConfigEmbeddedWebApplicationContext[0;39m [2m:[0;39m Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@55ca8de8: startup date [Sun Apr 02 18:30:03 CEST 2017]; root of context hierarchy
+[2m2017-04-02 18:39:05.151[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[169.254.252.198][0;39m [36mo.s.j.e.a.AnnotationMBeanExporter       [0;39m [2m:[0;39m Unregistering JMX-exposed beans on shutdown
+[2m2017-04-02 18:39:05.152[0;39m [32m INFO[0;39m [35m4052[0;39m [2m---[0;39m [2m[169.254.252.198][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'

@@ -1,0 +1,202 @@
+package com.openwebinars.hibernate.envers;
+
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.hibernate.envers.AuditReader;
+import org.hibernate.envers.AuditReaderFactory;
+import org.hibernate.envers.DefaultRevisionEntity;
+import org.hibernate.envers.RevisionType;
+import org.hibernate.envers.query.AuditQuery;
+
+/**
+ * Audotiría de Entidades con Hibernate Envers
+ * www.openwebinars.net
+ * @LuisMLopezMag
+ */
+public class App {
+
+	
+	//Declaramos las propiedades a nivel de clase
+	//y estáticas porque las usaremos en varios 
+	//métodos estáticos diferentes
+	
+	static EntityManagerFactory emf;
+	static EntityManager em;
+	static AuditReader reader;
+
+	public static void main(String[] args) {
+
+		// Configuramos el EMF a través de la unidad de persistencia
+		emf = Persistence.createEntityManagerFactory("Envers");
+
+		// Generamos un EntityManager
+		em = emf.createEntityManager();
+
+		// Generamos un AuditReader
+		reader = AuditReaderFactory.get(em);
+
+		// Insertamos algunos datos de ejemplo
+
+		Categoria[] categorias = { new Categoria("Ordenadores y portátiles"), new Categoria("Smartphones y telefonía"),
+				new Categoria("Imagen y sonido") };
+
+		addCategorias(Arrays.asList(categorias));
+
+		
+		Producto[] ordenadores = {
+				new Producto("Macbook Pro", "Apple MacoBook Pro Retina Display Intel i7/16GB/256GB/15.4\"", 2058.0),
+				new Producto("Asus D540SA-XX621", "Asus D540SA-XX621 Intel Celeron N3060/4GB/500GB/15.6\"", 229.0),
+				new Producto("Hp Spectre 13-V101NS", "Hp Spectre 13-V101NS Intel Core i7-7500U/8GB/256GBSDD/13.3\"",
+						1499.0) };
+
+		Producto[] smpartphones = { new Producto("Iphone 7 Rojo", "Apple iPhone 7 128 GB Rojo Edición Limitada", 869.0),
+				new Producto("Samsung Galaxy J5", "Samsung Galaxy J5 2016 Negro Dual Libre", 189.0),
+				new Producto("Bq X5 Plus", "Bq X5 Plus 32GB Negro", 289.0) };
+
+		Producto[] imagen = { new Producto("GoPro Hero 5 Session", "GoPro Hero 5 Session", 359.0) };
+
+		addProductos(Arrays.asList(ordenadores), "Ordenadores y portátiles");
+		addProductos(Arrays.asList(smpartphones), "Smartphones y telefonía");
+		addProductos(Arrays.asList(imagen), "Imagen y sonido");
+
+		// Realizamos un descuento en todos los productos
+		rebajas(0.15);
+
+		// Pasadas las rebajas, subimos los precios
+		incremento(0.25);
+
+		// Llega el Black Friday, y los bajamos de nuevo
+		rebajas(0.10);
+
+		// Y la Navidad, con lo cual hay subida
+		incremento(0.18);
+
+		// Eliminamos todos los productos
+		cierreTotal();
+
+		// Consulta de información auditada
+		consultaProductosAuditados();
+		
+		// Cerramos el EntityManager y el EntityManagerFactory
+		em.close();
+		emf.close();
+
+	}
+
+	/*
+	 * Método que nos va a insertar en una sola transacción una lista de
+	 * categorías
+	 */
+	public static void addCategorias(List<Categoria> list) {
+		em.getTransaction().begin();
+		for (Categoria c : list)
+			em.persist(c);
+		em.getTransaction().commit();
+	}
+
+	/*
+	 * Método que nos va a insertar en una sola transacción una lista de
+	 * productos. La categoría se proporciona como un String, así que antes es
+	 * buscada en la base de datos.
+	 */
+
+	public static void addProductos(List<Producto> list, String nombreCategoria) {
+		em.getTransaction().begin();
+
+		Categoria c = (Categoria) em.createQuery("select c from Categoria c where c.nombre = :name")
+				.setParameter("name", nombreCategoria).setFirstResult(0).setMaxResults(1).getSingleResult();
+
+		for (Producto p : list) {
+			p.setCategoria(c);
+			em.persist(p);
+		}
+		em.getTransaction().commit();
+	}
+
+	/*
+	 * Método que realiza una rebaja en todos los productos El porcentaje lo
+	 * expresamos como un número entre 0 y 1
+	 */
+
+	public static void rebajas(double porcentajeRebajas) {
+		incremento(-porcentajeRebajas);
+	}
+
+	/*
+	 * Método que realiza un aumento en el precio de todos los productos El
+	 * porcentaje lo expresamos como un número entre 0 y 1
+	 */
+	@SuppressWarnings("unchecked")
+	public static void incremento(double porcentajeIncremento) {
+		em.getTransaction().begin();
+
+		double porcentajePrecio = 1.0 + porcentajeIncremento;
+
+		// No usamos una consulta UPDATE porque "anula" el funcionamiento de
+		// Envers
+
+		// em.createQuery("update Producto p SET p.pvp = p.pvp * :cantidad")
+		// .setParameter("cantidad", porcentajePrecio).executeUpdate();
+
+		List<Producto> productos = em.createQuery("select p from Producto p").getResultList();
+
+		for (Producto p : productos) {
+			p.setPvp(p.getPvp() * porcentajePrecio);
+		}
+
+		em.getTransaction().commit();
+
+	}
+
+	/*
+	 * Método que elimina todos los productos y categorías de la base de datos
+	 * siguiendo el ciclo de vida de las entidades
+	 * (Condición necesaria para que Envers funcione)
+	 */
+	@SuppressWarnings("unchecked")
+	public static void cierreTotal() {
+		em.getTransaction().begin();
+
+		List<Producto> productos = em.createQuery("select p from Producto p").getResultList();
+
+		for (Producto p : productos) 
+			em.remove(p);
+		
+		
+		List<Categoria> categorias = em.createQuery("select c from Categoria c").getResultList();
+		
+		for(Categoria c: categorias) 
+			em.remove(c);
+
+		em.getTransaction().commit();
+	}
+
+	/*
+	 * Consulta de información de auditoría Consultamos las versiones de
+	 * Producto que han sido auditadas
+	 */
+	@SuppressWarnings("unchecked")
+	public static void consultaProductosAuditados() {
+		
+		
+		AuditQuery query = reader.createQuery().forRevisionsOfEntity(Producto.class, false, true);
+
+		List<Object[]> results = query.getResultList();
+
+		for (Object[] obj : results) {
+			Producto p = (Producto) obj[0];
+			DefaultRevisionEntity dre = (DefaultRevisionEntity) obj[1];
+			RevisionType revType = (RevisionType) obj[2];
+			System.out.println(String.format("(Id: %d) - Producto: %s (%.2f €) (%s el %s)", dre.getId(), p.getNombre(), p.getPvp(),
+					revType.toString(), dre.getRevisionDate()));
+
+		}
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.openwebinars.hibernate.hbnpost.model.beans;
+
+public class CommentBean {
+	
+	private String contenido;
+	
+	private long post_id;
+	
+	public CommentBean() {
+		
+	}
+	
+	
+
+}

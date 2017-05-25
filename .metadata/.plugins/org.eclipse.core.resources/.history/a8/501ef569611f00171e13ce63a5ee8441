@@ -1,0 +1,177 @@
+package com.openwebinars.hibernate.consultas;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.openwebinars.hibernate.consultas.model.Customer;
+
+/**
+ * Consultas (JPQL, con nombre, nativas, ....)
+ * www.openwebinars.net
+ * @LuisMLopezMag
+ */
+public class AppBasic 
+{
+    @SuppressWarnings("unchecked")
+	public static void main( String[] args )
+    {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Consultas");
+        
+        EntityManager em = emf.createEntityManager();
+        
+        /*
+        //EJEMPLO 1 - Consultas sencillas
+        
+        //Consulta 1 - Básica
+        System.out.println("\n\nConsulta 1 - Básica");
+        Query query = em.createQuery(
+        		"select c from Customer c"
+        );
+        
+        List<Customer> listCustomer = (List<Customer>) query.getResultList();
+        
+        System.out.println("LISTADO DE TODOS LOS CLIENTES");
+        System.out.println("=============================");
+        for(Customer c : listCustomer)
+        	System.out.println(c.getCustomerName());
+
+        //Consulta 2 - Selección de solo algunas propiedades
+        System.out.println("\n\nConsulta 2 - Selección de solo algunas propiedades");
+        query = em.createQuery(
+        		"SELECT c.customerName, c.city, c.country FROM Customer c"
+        );
+        
+        
+        List<Object[]> list = (List<Object[]>) query.getResultList();
+        System.out.println("LISTADO DE TODOS LOS CLIENTES (Nombre, Ciudad y Pais)");
+        System.out.println("=============================");        
+        for(Object[] o : list) {
+        	System.out.print((String)o[0] + ", ");
+        	System.out.print((String)o[1] + ", ");
+        	System.out.println((String)o[2]);
+        }
+        */
+        
+        /* --------------------------------------------------------------------------*/
+        
+        /*
+        //EJEMPLO 2 - Consultas sencillas con condiciones
+        
+        //Consulta 3 - Consulta con condiciones
+        System.out.println("\n\nConsulta 3 - Consulta con condiciones");
+        Query query = em.createQuery(
+        		"SELECT e FROM Employee e WHERE e.jobTitle = 'Sales Rep'"
+        );
+        
+        List<Employee> listEmployee = (List<Employee>) query.getResultList();
+        
+        System.out.println("LISTADO DE TODOS LOS EMPLEADOS CON jobTitle=Sales Rep");
+        System.out.println("=============================");
+        for(Employee e : listEmployee)
+        	System.out.println(e.getFirstName() + " " + e.getLastName());
+        
+        */
+
+        /* --------------------------------------------------------------------------*/
+
+        /*
+        //EJEMPLO 3 - Consultas con parámetros dinámicos
+        System.out.println("\n\nConsulta 4 - Consulta con parámetros dinámicos");
+        Query query = em.createQuery(
+        		"SELECT e FROM Employee e WHERE e.jobTitle = :jobTitle"
+        );
+        
+        query.setParameter("jobTitle", "Sales Rep");
+        //query.setParameter("jobTitle", "President");
+        
+        List<Employee> listEmployee = (List<Employee>) query.getResultList();
+        
+        System.out.println("LISTADO DE TODOS LOS EMPLEADOS CON jobTitle=Sales Rep");
+        System.out.println("=============================");
+        for(Employee e : listEmployee)
+        	System.out.println(e.getFirstName() + " " + e.getLastName());
+        
+        */
+        
+        
+        /* --------------------------------------------------------------------------*/
+
+        /*
+        
+        //EJEMPLO 4 - Consultas con parámetros dinámicos y ordenación
+        System.out.println("\n\nConsulta 5 - Consulta con parámetros dinámicos y ordenación ");
+        Query query = em.createQuery(
+        		"SELECT o FROM Order o WHERE o.orderDate BETWEEN ?1 AND ?2 AND status = ?3 ORDER BY o.orderDate DESC"
+        );
+
+        
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2003, 0, 1);
+        
+        query.setParameter(1, calendar.getTime());
+        
+        calendar.set(2003, 5, 30);
+        
+        query.setParameter(2, calendar.getTime());
+        
+        query.setParameter(3, "Shipped");
+        
+        List<Order> listOrder = (List<Order>) query.getResultList();
+        
+        System.out.println("LISTADO DE TODAS LAS VENTAS EN UN RANGO DE FECHAS Y ENVIADAS");
+        System.out.println("================================================================");
+        for(Order o : listOrder) {
+        	System.out.print(o.getOrderDate() + ", ");
+        	System.out.print(o.getStatus() + ", ");
+        	//Podemos navegar a través de las propiedades
+        	System.out.println(o.getCustomer().getCustomerName());
+        }
+        
+        
+        em.close();
+        emf.close();
+        
+		*/
+	
+        /* --------------------------------------------------------------------------*/
+
+        /*
+        
+        //EJEMPLO 5 - Consultas con un solo resultado
+        
+        //Consulta 6 - count()
+        System.out.println("\n\nConsulta 6 - COUNT()");
+        Query query = em.createQuery(
+        		"select COUNT(p) from Product p"
+        );
+        
+        long count = (long) query.getSingleResult();
+        
+        System.out.println("CANTIDAD DE PRODUCTOS EN EL CATÁLOGO");
+        System.out.println("=====================================");
+        System.out.println("La cantidad de productos en el catálogo es " + count);
+        
+        //Consulta 7 - MAX()
+        System.out.println("\n\nConsulta 7 - MAX()");
+        query = em.createQuery(
+        		"select MAX(p.amount) FROM Payment p"
+        );
+        
+        BigDecimal maxAmount = (BigDecimal) query.getSingleResult();
+        
+        System.out.println("PAGO DE MAYOR CUANTÍA REALIZADO");
+        System.out.println("===============================");
+        System.out.println("La cuantía más grande que se ha abonado es " + maxAmount.toPlainString());
+
+        */
+
+        
+        /* --------------------------------------------------------------------------*/
+
+        
+    }
+}

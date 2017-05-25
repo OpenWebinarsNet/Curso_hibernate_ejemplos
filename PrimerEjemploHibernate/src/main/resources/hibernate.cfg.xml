@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">12345678</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost/hibernate</property>
+  <property name="hibernate.connection.username">openwebinars</property>
+  <property name="hibernate.default_schema">hibernate</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.format_sql">true</property>
+  <property name="hibernate.hbm2ddl.auto">create</property>
+ </session-factory>
+</hibernate-configuration>

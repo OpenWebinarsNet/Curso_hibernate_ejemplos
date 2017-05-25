@@ -1,0 +1,67 @@
+package com.openwebinars.hibernate.elementosavanzados;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.PostLoad;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="ADVANCEDUSER")
+public class User {
+
+	@Id
+	@GeneratedValue
+	private long id;
+
+	private String email;
+
+	private String city;
+	
+	//@Formula(value = "select count(*) from ADVANCEDPOST where author_id = id")
+	@Transient
+	private int postsWrited;
+	
+	//@Formula(value = "select 3.14*1")
+	@Transient
+	private double unoMasUno;
+
+	public long getId() {
+		return id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public int getPostsWrited() {
+		return postsWrited;
+	}
+
+	public double getUnoMasUno() {
+		return unoMasUno;
+	}
+	
+	@PostLoad
+	public void postLoad() {
+		this.unoMasUno = 3.14 * 10.0;
+		//this.postsWrited =
+		
+		
+	}
+	
+
+}

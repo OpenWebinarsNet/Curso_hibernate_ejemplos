@@ -1,0 +1,36 @@
+package com.openwebinars.hibernate.herencia;
+
+import com.openwebinars.hibernate.herencia.Cuenta;
+import java.io.Serializable;
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: CuentaDebito
+ *
+ */
+@Entity
+@DiscriminatorValue("CD")
+public class CuentaDebito extends Cuenta implements Serializable {
+
+	
+	private double cargoPorDescubierto;
+	private static final long serialVersionUID = 1L;
+
+	public CuentaDebito() {
+		super();
+	}   
+	public double getCargoPorDescubierto() {
+		return this.cargoPorDescubierto;
+	}
+
+	public void setCargoPorDescubierto(double cargoPorDescubierto) {
+		this.cargoPorDescubierto = cargoPorDescubierto;
+	}
+	@Override
+	public String toString() {
+		return "CuentaDebito [cargoPorDescubierto=" + cargoPorDescubierto + "]";
+	}
+	
+	
+   
+}

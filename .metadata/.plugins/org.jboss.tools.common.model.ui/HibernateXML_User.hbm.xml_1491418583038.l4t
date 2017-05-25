@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/HibernateXML/src/main/resources/User.hbm.xml">
+ <TreeFormPage>
+  <Memento type="FileHibernate3">
+   <Memento type="File Hibernate 3.0"/>
+   <Memento type="Advanced"/>
+   <Memento type="Meta"/>
+   <Memento type="Types"/>
+   <Memento type="Imports"/>
+   <Memento type="Classes"/>
+   <Memento type="Queries"/>
+   <Memento type="Filters"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

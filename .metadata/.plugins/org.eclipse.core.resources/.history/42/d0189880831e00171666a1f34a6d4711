@@ -1,0 +1,134 @@
+package com.openwebinars.hibernate.hbnpost.model;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.openwebinars.hibernate.hbnpost.model.beans.RegisterBean;
+
+
+
+@Entity
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	
+	private String nombre;
+	
+	private String email;
+	
+	@Temporal(TemporalType.DATE)
+	private Date fechaAlta;
+
+	
+	private String ciudad;
+	
+	private String password;
+	
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch=FetchType.EAGER)
+	private List<Comment> comments = new ArrayList<>();
+	
+
+	public User() {
+		this.fechaAlta = new Date();
+	}
+	
+	public User(RegisterBean r) {
+		this();
+		this.email = r.getEmail();
+		this.nombre = r.getNombre();
+		this.ciudad = r.getCiudad();
+		this.password = r.getPassword();
+	}
+
+
+
+	public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public Date getFechaAlta() {
+		return fechaAlta;
+	}
+
+
+	public void setFechaAlta(Date fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+
+
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	public List<Comment> getComments() {
+		return comments;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nombre=" + nombre + ", email=" + email + ", fechaAlta=" + fechaAlta + ", ciudad="
+				+ ciudad + ", password=" + password + "]";
+	}
+	
+	
+	
+	
+		
+}

@@ -1,0 +1,89 @@
+package com.openwebinars.hibernate.hibernatejpamanytomany;
+
+
+import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+@IdClass(PersonAddressId.class)
+public class PersonAddress {
+	
+	
+
+	@ManyToOne
+	@JoinColumn(
+			name="person_id",
+			insertable = false, updatable = false
+	)	
+	private Person person;
+	
+	@ManyToOne
+	@JoinColumn(
+			name="address_id",
+			insertable = false, updatable = false
+	)	
+	private Address address;
+	
+	
+	public PersonAddress() { }
+	
+
+    public PersonAddress(Person person, Address address) {
+       /* this.person = person;
+        this.address = address;
+        
+        this.id.personId = person.getId();
+        this.id.addressId = address.getId();
+        
+        person.getAddresses().add(this);
+        address.getOwners().add(this);*/
+    }
+    
+    
+
+    public Id getId() {
+		return id;
+	}
+
+
+
+	public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        PersonAddress that = (PersonAddress) o;
+        return Objects.equals( person, that.person ) &&
+                Objects.equals( address, that.address );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( person, address );
+    }
+
+}

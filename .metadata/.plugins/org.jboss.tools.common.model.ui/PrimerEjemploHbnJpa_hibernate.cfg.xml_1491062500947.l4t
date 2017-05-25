@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/PrimerEjemploHbnJpa/src/main/resources/hibernate.cfg.xml">
+ <TreeFormPage>
+  <Memento type="HibConfig3SessionFactory">
+   <Memento collapsed="false" type="Session Factory"/>
+   <Memento collapsed="false" type="Properties"/>
+   <Memento collapsed="false" type="Mappings"/>
+  </Memento>
+  <Memento type="">
+   <Memento type="Properties Editor"/>
+  </Memento>
+  <Memento type="%No text%">
+   <Memento collapsed="false" type="Properties"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

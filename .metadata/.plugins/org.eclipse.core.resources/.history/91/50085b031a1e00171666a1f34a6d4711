@@ -1,0 +1,14 @@
+package com.openwebinars.hibernate.hbnpost.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Comment {
+	
+	
+	@Lob
+	private String text;
+	
+	
+
+}

@@ -1,0 +1,22 @@
+package com.openwebinars.hibernate.hbnpost.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+public class Comment {
+	
+	
+	@Lob
+	private String text;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date date;
+	
+	
+
+}

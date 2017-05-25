@@ -1,0 +1,51 @@
+package com.openwebinars.hibernate.primerejemplohbn;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Primer proyecto con Hibernate
+ * www.openwebinars.net
+ * @LuisMLopezMag
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		
+		
+		StandardServiceRegistry sr = new StandardServiceRegistryBuilder()
+				.configure()
+				.build();
+		SessionFactory sf = new MetadataSources(sr).buildMetadata().buildSessionFactory();
+		
+		/*
+		//Codigo "legacy"
+		SessionFactory sf = new Configuration()
+				.configure()
+				.buildSessionFactory();
+		*/
+		
+		Session session = sf.openSession();
+
+		User user1 = new User();
+		user1.setId(1);
+		user1.setUserName("Pepe");
+		user1.setUserMessage("Hello world from Pepe");
+
+		User user2 = new User();
+		user2.setId(2);
+		user2.setUserName("Juan");
+		user2.setUserMessage("Hello world from Juan");
+		session.beginTransaction();
+		
+		// saving objects to session
+		session.save(user1);
+		session.save(user2);
+		session.getTransaction().commit();
+		session.close();
+	}
+}

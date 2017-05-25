@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=2
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=HbnPost
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=1.5.2.RELEASE
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=A blog about Hibernate
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.openwebinars.hibernate
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=HbnPost
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.openwebinars.hibernate.hbnpost
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT

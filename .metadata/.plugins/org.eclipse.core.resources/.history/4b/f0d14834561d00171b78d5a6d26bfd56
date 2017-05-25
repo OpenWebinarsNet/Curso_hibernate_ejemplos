@@ -1,0 +1,11 @@
+package com.openwebinars.hibernate.hibernatejpamanytomany;
+
+public class PersonAddressId implements Serializable {
+	
+	private Long preson;
+	private Long address;
+	
+	
+	
+
+}

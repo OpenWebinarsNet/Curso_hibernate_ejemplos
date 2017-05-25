@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/PrimerEjemploHibernate/src/main/resources/hibernate.cfg.xml">
+ <TreeFormPage>
+  <Memento type="HibConfig3SessionFactory">
+   <Memento type="Session Factory"/>
+   <Memento type="Properties"/>
+   <Memento type="Mappings"/>
+  </Memento>
+  <Memento type="">
+   <Memento type="Properties Editor"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>
